@@ -60,7 +60,7 @@ class InProcessMediaGateway:
             protocol_version=MEDIA_API_VERSION,
             gateway_epoch=self._gateway_epoch,
             process_id=os.getpid(),
-            component_instance=os.environ.get("F8_COMPONENT_INSTANCE"),
+            application_instance=os.environ.get("F8_APPLICATION_INSTANCE"),
         )
 
     async def create_video_session(self, offer: MediaSessionOffer) -> MediaSessionAnswer:

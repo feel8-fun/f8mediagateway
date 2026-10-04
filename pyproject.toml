@@ -4,8 +4,7 @@ version = "0.1.0"
 description = "Process-isolated Zenoh to WebRTC media gateway for Feel8 Studio."
 requires-python = ">=3.14,<3.15"
 dependencies = [
-    "f8pysdk",
-    "f8media-protocol",
+    "f8pysdk[media]",
     "numpy>=2.4,<3",
     "aiortc>=1.14,<2",
     "fastapi>=0.120,<1",

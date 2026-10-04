@@ -34,7 +34,7 @@ def test_gateway_health_identifies_process_and_protocol() -> None:
         "protocolVersion": MEDIA_API_VERSION,
         "gatewayEpoch": "test-epoch",
         "processId": os.getpid(),
-        "componentInstance": None,
+        "applicationInstance": None,
     }
 
 

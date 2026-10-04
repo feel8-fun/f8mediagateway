@@ -1,0 +1,47 @@
+{
+  "schemaVersion": "f8extensionCatalog/1",
+  "extensions": [
+    {
+      "extensionId": "media-gateway",
+      "name": "Media Gateway",
+      "version": "0.1.0",
+      "description": "Media Gateway application extension",
+      "runtime": {
+        "kind": "workspace",
+        "environment": "media"
+      },
+      "application": {
+        "launch": {
+          "environment": "media",
+          "module": "f8media_gateway",
+          "args": [
+            "--host",
+            "127.0.0.1",
+            "--port",
+            "${F8_PORT:media-gateway.http}",
+            "--exit-on-stdin-close"
+          ],
+          "distribution": "f8media-gateway"
+        },
+        "provides": [
+          {
+            "protocolId": "f8media-api",
+            "version": "1.0"
+          }
+        ],
+        "endpoints": [
+          {
+            "name": "http",
+            "url": "http://127.0.0.1:8211"
+          }
+        ],
+        "health": {
+          "endpoint": "http",
+          "path": "/api/health",
+          "service": "f8media-gateway",
+          "protocolVersion": "f8media-api/1"
+        }
+      }
+    }
+  ]
+}

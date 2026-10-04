@@ -9,7 +9,6 @@ pip = ">=26,<27"
 
 [pypi-dependencies]
 f8media-gateway = {path = ".", editable = true}
-f8media-protocol = {path = "f8media_protocol", editable = true}
 f8pysdk = {path = ".sdk/python", editable = true}
 
 [tasks]

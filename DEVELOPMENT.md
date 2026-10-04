@@ -1,10 +1,10 @@
 # Development and publication
 
-Prepare `.sdk` as a checkout of `feel8-fun/f8sdk` at a reviewed component-capable
-commit. Inside the distribution checkout, run:
+Prepare `.sdk` as a checkout of `feel8-fun/f8sdk` at a reviewed application-capable
+commit. Inside the development workspace checkout, run:
 
 ```sh
-pixi run -e build-check python scripts/component_workspace.py prepare
+pixi run -e build-check python scripts/workspace_inputs.py prepare
 ```
 
 Build dependencies live in `.ci/pixi.toml` and `.ci/pixi.lock`. Runtime dependencies
@@ -22,7 +22,6 @@ inputs to wheels, locks the portable runtime and writes a ZIP plus SHA-256 in
 `dist/`. No other application implementation is compiled. Configure the publisher
 workflow with reviewed dependency commits; it uploads artifacts, not a remote release.
 
-The `f8media_protocol/` directory publishes the client/contracts library separately
-from the gateway implementation. Consumers may carry a compatible library version
-in their own interpreter. The managed component uses an independently selected
-endpoint and validates its actual media protocol during readiness checks.
+The SDK owns `f8media_protocol` client/contracts. Gateway and consumers select
+compatible SDK versions in their own interpreters. The managed application uses
+an independently configured endpoint and validates its protocol on readiness.
