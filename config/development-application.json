@@ -1,0 +1,1 @@
+["-m", "f8media_gateway", "--host", "127.0.0.1", "--port", "${F8_PORT:media-gateway.http}", "--exit-on-stdin-close"]
